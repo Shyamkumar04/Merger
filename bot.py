@@ -197,7 +197,16 @@ async def start_handler(c: Client, m: Message):
         if user.allowed is False:
             res = await m.reply_text(
                 text=f"Hi **{m.from_user.first_name}**\n\n 🛡️ Unfortunately you can't use me\n\n**Contact: 🈲 @{Config.OWNER_USERNAME}** ",
-                quote=True,
+                reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton("🗯 Channel", url="https://t.me/TomenBots"),
+                        InlineKeyboardButton("💬 Support", url="https://t.me/TomenSupport")
+                    ],[
+                        InlineKeyboardButton("Use Me Here", url="https://t.me/TomenLMGroup")
+                ]
+            ),
+		quote=True,
             )
             return
     else:
@@ -205,7 +214,16 @@ async def start_handler(c: Client, m: Message):
         user.set()
     res = await m.reply_text(
         text=f"Hi **{m.from_user.first_name}**\n\n ⚡ I am a file/video merger bot\n\n😎 I can merge Telegram files!, And upload it to telegram\n\n**Owner: 🈲 @{Config.OWNER_USERNAME}** ",
-        quote=True,
+        reply_markup=InlineKeyboardMarkup(
+        [
+            [
+                InlineKeyboardButton("🗯 Channel", url="https://t.me/TomenBots"),
+                InlineKeyboardButton("💬 Support", url="https://t.me/TomenSupport")
+            ],[
+                InlineKeyboardButton("Use Me Here", url="https://t.me/TomenLMGroup")
+        ]
+    ),
+	quote=True,
     )
     del user
 
@@ -220,7 +238,16 @@ async def files_handler(c: Client, m: Message):
         if user.allowed is False:
             res = await m.reply_text(
                 text=f"Hi **{m.from_user.first_name}**\n\n 🛡️ Unfortunately you can't use me\n\n**Contact: 🈲 @{Config.OWNER_USERNAME}** ",
-                quote=True,
+                reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton("🗯 Channel", url="https://t.me/TomenBots"),
+                        InlineKeyboardButton("💬 Support", url="https://t.me/TomenSupport")
+                    ],[
+                        InlineKeyboardButton("Use Me Here", url="https://t.me/TomenLMGroup")
+                ]
+            ),
+		quote=True,
             )
             return
     if user.merge_mode == 4: # extract_mode
